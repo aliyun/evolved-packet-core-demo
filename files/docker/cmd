@@ -1,0 +1,3 @@
+sudo docker run -tid --privileged=true -p 3001:3001 -v /home/wnet/app/vepc/conf:/epc/cfg -v /home/wnet/app/vepc/log:/epc/log --network host epc_u:1.0
+sudo docker run -tid --privileged=true -p 3001:3001 --name epc --network host epc_u:1.0 /sbin/init
+sudo docker exec -it epc /bin/bash

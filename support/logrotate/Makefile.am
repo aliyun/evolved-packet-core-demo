@@ -1,0 +1,4 @@
+EXTRA_DIST = vepc.in
+
+MAINTAINERCLEANFILES = Makefile.in 
+MOSTLYCLEANFILES = *.stackdump

@@ -1,0 +1,9 @@
+# truncate rails logs every day at midnight, keep 14 previous logs, compress previous logs
+#
+# logfilename                         [owner:group] mode count size  when  flags [/pid_file]        [sig_num]
+@LOCALSTATE_DIR@/log/vepc/pcrf.log              644  14    *     $D0   GZ    @LOCALSTATE_DIR@/run/vepc-pcrfd/pid`
+@LOCALSTATE_DIR@/log/vepc/pgw.log               644  14    *     $D0   GZ    @LOCALSTATE_DIR@/run/vepc-pgwd/pid`
+@LOCALSTATE_DIR@/log/vepc/sgw.log               644  14    *     $D0   GZ    @LOCALSTATE_DIR@/run/vepc-sgwd/pid`
+@LOCALSTATE_DIR@/log/vepc/hss.log               644  14    *     $D0   GZ    @LOCALSTATE_DIR@/run/vepc-hssd/pid`
+@LOCALSTATE_DIR@/log/vepc/mme.log               644  14    *     $D0   GZ    @LOCALSTATE_DIR@/run/vepc-mmed/pid`
+@LOCALSTATE_DIR@/log/vepc/vepc.log           644  14    *     $D0   GZ    @LOCALSTATE_DIR@/run/vepc-epcd/pid`

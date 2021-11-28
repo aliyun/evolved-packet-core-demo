@@ -1,0 +1,16 @@
+@LOCALSTATE_DIR@/log/vepc/*.log {
+    daily
+    sharedscripts
+    missingok
+    compress
+    rotate 14
+    create 640 vepc vepc
+
+    postrotate
+        for i in pcrfd pgwd sgwd hssd mmed epcd; do
+            if [ -e @LOCALSTATE_DIR@/run/vepc-$i/pid ] ; then
+                kill -HUP `cat @LOCALSTATE_DIR@/run/vepc-$i/pid`
+            fi
+        done
+    endscript
+}

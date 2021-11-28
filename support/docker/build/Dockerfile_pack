@@ -1,0 +1,5 @@
+FROM vepc_u:2.2
+MAINTAINER jianzhi.gjz@alibaba-inc.com
+
+ENV PATH "$PATH:/usr/local/go/bin"
+ENTRYPOINT ["/sbin/init"]

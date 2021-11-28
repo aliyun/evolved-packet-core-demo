@@ -1,0 +1,1 @@
+sudo docker run -tid --privileged=true -p 3001:3001 -v /root/app/vepc/conf:/epc/cfg -v /root/app/vepc/log:/epc/log --network host [imageId]

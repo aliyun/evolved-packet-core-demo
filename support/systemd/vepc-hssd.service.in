@@ -1,0 +1,21 @@
+[Unit]
+Description=VEPC HSS Daemon
+BindTo=mongodb.service
+After=networking.service mongodb.service
+
+[Service]
+Type=simple
+
+User=vepc
+Group=vepc
+
+RuntimeDirectory=vepc-hssd
+PIDFile=@LIB_DIR@/run/vepc-hssd/pid
+
+Restart=always
+ExecStart=@BIN_DIR@/vepc-hssd -f @SYSCONF_DIR@/vepc/hss.conf
+RestartSec=2
+RestartPreventExitStatus=1
+
+[Install]
+WantedBy=multi-user.target

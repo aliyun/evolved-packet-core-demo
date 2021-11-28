@@ -1,0 +1,16 @@
+# SGi
+auto enp2s0
+iface enp2s0 inet dhcp
+
+# S1
+auto enp3s0
+iface enp3s0 inet static
+address 192.168.212.1
+netmask 255.255.255.252
+
+# sync
+auto enp7s0f1
+iface enp7s0f1 inet static
+address 192.168.222.101
+#address 192.168.222.102
+mask 255.255.255.0

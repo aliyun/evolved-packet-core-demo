@@ -1,0 +1,16 @@
+### For reference, see `vepc.conf`
+
+logger:
+    file: @LOCALSTATE_DIR@/log/vepc/sgw.log
+    trace: 
+        app: 1
+        gtpv2: 1
+        gtp: 1
+
+parameter:
+    no_ipv6: true
+
+sgw:
+    gtpc:
+      addr: 127.0.0.2
+    gtpu:

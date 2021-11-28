@@ -1,0 +1,21 @@
+[Unit]
+Description=VEPC PCRF Daemon
+BindTo=mongodb.service
+After=networking.service mongodb.service
+
+[Service]
+Type=simple
+
+User=vepc
+Group=vepc
+
+RuntimeDirectory=vepc-pcrfd
+PIDFile=@LIB_DIR@/run/vepc-pcrfd/pid
+
+Restart=always
+ExecStart=@BIN_DIR@/vepc-pcrfd -f @SYSCONF_DIR@/vepc/pcrf.conf
+RestartSec=2
+RestartPreventExitStatus=1
+
+[Install]
+WantedBy=multi-user.target

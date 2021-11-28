@@ -1,0 +1,20 @@
+[Unit]
+Description=VEPC S-GW Daemon
+After=networking.service
+
+[Service]
+Type=simple
+
+User=vepc
+Group=vepc
+
+RuntimeDirectory=vepc-sgwd
+PIDFile=@LIB_DIR@/run/vepc-sgwd/pid
+
+Restart=always
+ExecStart=@BIN_DIR@/vepc-sgwd -f @SYSCONF_DIR@/vepc/sgw.conf
+RestartSec=2
+RestartPreventExitStatus=1
+
+[Install]
+WantedBy=multi-user.target
